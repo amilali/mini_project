@@ -3,7 +3,7 @@ let rect = document.getElementById("rectangle");
 rect.addEventListener("mousemove", (del)=>{
     let RectLoc = rect.getBoundingClientRect();
     let insideRec = del.clientX;
-    let difference =   insideRec - RectLoc.left;
+    let difference =   RectLoc.left - insideRec;
 
     if(difference < RectLoc.width/2)
     {
@@ -12,25 +12,5 @@ rect.addEventListener("mousemove", (del)=>{
             backgroundColor: `rgb(${RedColor},0,0)`,
             ease: "Power4",
         });
-    }
-    else {
-        // Reverse the calculation for blueColor
-        let blueColor = gsap.utils.mapRange(RectLoc.width / 2, RectLoc.width, 0, 255, difference);
-        gsap.to(rect, {
-            backgroundColor: `rgb(0,0,${blueColor})`,
-            ease: "Power4",
-        });
-    }
-
+    }   
 });
-
-// rect.addEventListener("mousemove", ()=>{
-//     rect.style.backgroundColor = "blue";
-// })
-
-// rect.addEventListener("mouseout", ()=>{
-//     rect.style.backgroundColor = "green";
-// })
-// rect.addEventListener("dblclick", ()=>{
-//     rect.style.backgroundColor = "yellow";
-// })
