@@ -1,10 +1,9 @@
-let rec = document.getElementById("rectangle");
+// let rec = document.getElementById("rectangle");
 
-rec.addEventListener("mouseover", (event) => {
-  event.target.style.width = "100%";
+window.addEventListener("mousemove", (det) => {
+  gsap.to("#imge", {
+    left: det.clientX + "px",
+    ease: Power3 // Added ".easeInOut" to specify the ease type
+  });
 });
 
-
-rec.addEventListener("mouseout", (event) => {
-    event.target.style.width = ""; // This will remove the inline style, reverting to the element's default width
-  });
