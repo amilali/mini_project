@@ -1,5 +1,4 @@
-const btn=document.querySelector("#throttle");
-     
+
 // Throttling Function
 const throttleFunction=(func, delay)=>{
  
@@ -43,4 +42,4 @@ document.getElementById("center").addEventListener("mousemove", throttleFunction
   setTimeout(()=>{
     div.remove();
   },1500);
-}, 200));
+}, 100));
