@@ -13,5 +13,5 @@ window.addEventListener("mousemove", (det) => {
     ease: Power3,
     top: mappery + "px"
   });
-});
+}); 
 
